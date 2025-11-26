@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brieva O.</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: 'neue';
+            src: url(fonts/NeueMontreal-Medium.otf);
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0; box-sizing: border-box;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(0, 0, 0, 0.833);
+            overflow-x: hidden;
+            overflow-y: hidden;
+            flex-direction: column;
+            /* box-shadow: 0 0 35px rgb(255, 255, 255); */
+            /* background-image: linear-gradient(#0006, #000000aa); */
+            /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); */
+            /* background: radial-gradient(circle at top, rgba(31, 28, 28, 0.8), rgba(0, 0, 0, 0.5)); 
+                width: 100%; 
+                height: 100vh; 
+                box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.5); */
+        }
+
+        .background-light {
+            position: relative;
+            margin: 0 auto;
+            padding: 0%;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at top, rgba(255, 247, 247, 0.019), rgb(0, 0, 0));
+            /* overflow: hidden;     */
+        }
+        .background-light::before {
+            content: '';
+            padding: 0%;
+            margin: 0% auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            box-shadow: 0 -10px 30px rgba(32, 31, 31, 0.874);
+            z-index: -1;
+        }
+        .nama {
+            position: fixed;
+            left: 45px;
+            top: 14px;
+            font-weight: normal;
+            font-size: 22px;
+        }
+        .spesialisasi {
+            position: fixed;
+            left: 45px;
+            top: 47px;
+            opacity: 75%;
+            font-weight: normal;
+            font-size: 12px;
+        }
+        .yt {
+            position: fixed;
+            top: 56px;
+            right: 178px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'neue';
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .rsm {
+            position: fixed;
+            top: 56px;
+            right: 68px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'neue';
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .panahAsmara {
+            position: fixed;
+            right: 158px;
+            top: 54px;
+            height: 20px;
+            width: 20px;
+            color: #ffffff;
+        }
+        .panahAsmara2 {
+            position: fixed;
+            right: 47px;
+            top: 54px;
+            height: 20px;
+            width: 20px;
+            color: #ffffff;
+        }
+
+/* ######################## OPSI GLOWING ########################### */
+        .navbarAtas {
+            flex-direction: column;
+            width: 100vw;
+            height: 100px;
+        }
+        .button-container { 
+            position: fixed;
+            top: 39px;
+            left: 655px; 
+            display: flex; 
+            width: 200px;
+            background: rgba(255, 255, 255, 0.07); 
+            backdrop-filter: blur(10px);
+            border: 2px solid #86868633; 
+            opacity: 75%;
+            border-radius: 20px; 
+            /* overflow: hidden;  */
+            z-index: 5;
+        } 
+
+        .option-btn { flex: 1;
+            padding: 10px; 
+            border: none; 
+            background-color: transparent; 
+            color: #ffffff; 
+            cursor: pointer; 
+            font-size: 16px; 
+            transition: color 0.3s; 
+        }
+
+        .option-btn:hover { 
+            color: #fbfdfe; 
+        } 
+
+        .slider { 
+            position: absolute; 
+            top: -4px; 
+            left: 12%; 
+            width: 25%; 
+            height: 3px; 
+            background-color: #ffffff; 
+            transition: left 0.3s;
+            box-shadow: 0 0 20px rgb(255, 255, 255), /* Efek glow */
+                        0 0 25px rgb(255, 255, 255),
+                        0 0 25px rgb(255, 255, 255);
+            z-index: 1;
+        }
+        .sliderPilihan {
+            position: absolute;
+            top: 3px;
+            left: 4px; 
+            display: flex; 
+            width: 91px;
+            height: 32px;
+            /* background: rgba(255, 255, 255, 0.07); */
+            background-color: #747070d7;
+            backdrop-filter: blur(10px); 
+            opacity: 30%;
+            border-radius: 20px;
+            z-index: -1; 
+            transition: left 0.3s;
+        }
+        
+/* #################### TAB OPENING #################### */
+
+        .frameTab1 {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin: 0% auto;
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.24), rgba(0, 0, 0, 0.662));
+            /* opacity: 30%; */
+            position: relative;
+            top: 60px;
+            left: 0px;
+            height: 800px;
+            width: 1040px;
+            /* background-color: rgba(72, 67, 67, 0); */
+            border: 2px solid #6868688d;
+            /* border-width: 20px; */
+            border-radius: 3%;
+            box-shadow: 0 0 90px rgba(0, 0, 0, 0.478);
+            z-index: 2;
+            transition: left 0.7s ease, opacity 0.6s ease;
+            overflow: hidden;
+        }
+        .frameTab1::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -80%; 
+            width: 100px; 
+            height: 100%; 
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.8), transparent); 
+            transform: skewX(160deg);
+            animation: shimmer 5s infinite; 
+            opacity: 5%;
+            /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
+        } 
+        @keyframes shimmer { 
+            0% { left: -80%; } 
+            /* 50% { left: 110%; }  */
+            100% { left: 380%; } 
+        }
+        .frameTab1::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -180%; 
+            width: 50px; 
+            height: 100%; 
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.8), transparent); 
+            transform: skewX(160deg);
+            animation: shimmer 5s infinite; 
+            opacity: 5%;
+            /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
+        } 
+        @keyframes shimmer { 
+            0% { left: -180%; } 
+            /* 50% { left: 110%; }  */
+            100% { left: 180%; } 
+        }
+        .frameTab22 {
+            position: relative;
+            top: -3.5px;
+            left: 0px;
+            height: 775px;
+            width: 1024px;
+            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+            /* background-color: rgba(72, 67, 67, 0); */
+            border: 2px solid #6868688d;
+            /* border-width: 20px; */
+            border-radius: 2.5%;
+            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
+            z-index: 3;  
+        }
+        .frameTab222 {
+            position: relative;
+            top: -4.5px;
+            left: 0px;
+            height: 775px;
+            width: 1024px;
+            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0));
+            /* border-width: 20px; */
+            border-radius: 2.5%;
+            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
+            z-index: 3;  
+        }
+        .frameTab222 {
+            position: relative;
+            top: -4.5px;
+            left: 0px;
+            height: 775px;
+            width: 1024px;
+            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.497), rgba(0, 0, 0, 0));
+            /* border-width: 20px; */
+            border-radius: 2.5%;
+            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
+            z-index: 3;  
+        }
+        .frameTab2 {
+            position: relative;
+            top: 2px;
+            clip-path: inset(0% 0% 94.5% 0%); 
+            left: -2px;
+            height: 775px;
+            width: 1024px;
+            background: radial-gradient(circle at top, rgba(255, 247, 247, 0.727), rgb(4, 4, 4));
+            /* background-color: rgb(72, 67, 67); */
+            border: 2px solid #6868688d;
+            /* border-width: 20px; */
+            border-radius: 2.5%;
+            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
+            z-index: 3;
+        }
+        #frameTabPhotos {
+        position: absolute;
+        top: 60px;          /* Sama seperti frameTab1 */
+        left: 0;
+        height: 800px;      /* Samakan dengan frameTab1 */
+        width: 1040px;      /* Samakan dengan frameTab1 */
+        margin: 0 auto;
+        transform: translateX(120vw) translateY(0px);
+        }
+        
+        /* ================= SMOOTH TRANSITION PATCH ================= */
+        .frameTab1,
+        #frameTabPhotos {
+            position: absolute;      /* sama posisi untuk keduanya */
+            top: 190px;               /* sama seperti yang kamu pakai untuk frameTab1 */
+            left: 50%;               /* center anchor */
+            width: 1040px;
+            height: 800px;
+            transform: translateX(calc(-50%)); /* default: centered */
+            transition: transform 0.7s cubic-bezier(0.25,0.1,0.25,1), opacity 0.6s ease;
+            will-change: transform, opacity;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .indicator {
+            position: absolute;
+            top: 5px;
+            left: 13px;
+            width: 64px;
+            height: 35px;
+            z-index: 4;
+            /* opacity: 80%; */
+        }
+        .ples {
+            position: absolute;
+            top: -7.5px;
+            right: 20px;
+            color: #ffffff;
+            /* font-weight:normal; */
+            font-style: normal;
+            z-index: 4;
+            opacity: 45%;
+        }
+        .inpo {
+            font-family: 'neue';
+            color: #ffffff;
+            position: absolute;
+            right: 98px;
+            top: 382px;
+            z-index: 5;
+            font-size: 24px;
+            opacity: 90%;
+        }
+        .inpo2 {
+            font-family: 'neue';
+            color: #ffffff;
+            position: absolute;
+            right: 182px;
+            top: 414px;
+            z-index: 5;
+            font-size: 24px;
+            opacity: 38%;
+        }
+       
+/* ###################### SLOGAN ####################### */
+        .slogan {
+            position: absolute;
+            top: 48px;
+            right: 109px;
+            color: #ffffff;
+            font-size: 96px;
+            text-align: left;
+            /* font-family: "Gloock", serif; */
+            font-family: 'neue';
+            letter-spacing: -2px;
+            line-height: 85px;
+            text-shadow: 1px 10.5px 20px rgba(3, 0, 64, 0.403), /* Bayangan kiri bawah */ 
+                        -1px -7px 30px rgba(255, 255, 255, 0.366); /* Efek highlight kanan atas */ 
+            z-index: 5;
+        }
+        .stories {
+            font-family: "Gloock", serif;
+            /* color: #ffffff; */
+            background: linear-gradient(90deg, #FF6F61, #6B5B95, #88B04B); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; /* Tambahan untuk browser non-WebKit */ 
+            color: transparent;
+            text-shadow: 1px 12px 20px rgba(3, 0, 64, 0.327), /* Bayangan kiri bawah */ 
+                        -1px -4px 30px rgba(255, 255, 255, 0.366); /* Efek highlight kanan atas */ 
+        }
+        
+        
+    </style>
+
+
+    <div class="background-light">
+        <div class="navbarAtas">
+            <h2 class="nama" style="color: rgba(247, 247, 247, 0.959);" id="work">Brieva O.</h2>
+            <h4 class="spesialisasi" style="color: rgba(247, 247, 247, 0.842);">Computer Science - 003</h4>
+            
+            <a href="https://youtube.com/@warta_tech?si=WtGRYGcXYiXVH-I-" class="yt" id="yt">YouTube</a>
+            <a href="https://www.instagram.com/bripaom/?__d=1utm_sourceig_embed" class="rsm" id="rsm">Instagram</a>
+            <img src="images/panahasmara.png" class="panahAsmara" id="panahAsmara" alt="panahasmara">
+            <img src="images/panahasmara.png" class="panahAsmara2" id="panahAsmara2" alt="panahasmara">
+            <!-- <img src="images/panahasmara.svg" class="panahasmara" alt="panahasmara"> -->
+                <div>
+                    <div class="button-container">
+                        <button id="option1" class="option-btn" onclick="selectOption('option1')"> Home</button> 
+                        <button id="option2" class="option-btn" onclick="selectOption('option2')">PAP</button> 
+                        <div class="slider" id="slider"></div>
+                        <div class="sliderPilihan" id="sliderPilihan"></div> 
+                    </div> 
+                    <script src="script.js"></script>
+                </div>
+        </div>
+
+        <div class="frameTab1" id="frameTab1">
+            <div class="frameTab22" id="frameTab22">
+            <div class="frameTab222" id="frameTab222">
+            <div class="frameTab2222" id="frameTab2222">
+                <img src="images/indicator.png" class="indicator" alt="indicator">
+                <h2 class="ples" id="ples">+</h2>
+                <p class="slogan" id="slogan">I craft products,<br> 
+                    interactions & <span class="stories" id="stories"><i>stories.</i></span></p>
+                    <p class="inpo" id="inpo">Designer & Writer at WarTa,</p>
+                    <p class="inpo2" id="inpo2">Based in Indonesia.</p>
+                <div class="frameTab2" id="frameTab2">
+                    <div class="Tab" id="Tab"></div>
+                    
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <!-- FRAME TAB KHUSUS PHOTOS -->
+        <div class="frameTab1" id="frameTabPhotos" style="transform: translateX(calc(-50% + 120vw)); opacity: 0;">
+
+    <div class="frameTab22">
+        <div class="frameTab222">
+            <div class="frameTab2222">
+                <img src="images/indicator.png" class="indicator" alt="indi">
+                <h2 class="ples">+</h2>
+
+                <!-- <p class="slogan">Photos<br>
+                    <span class="stories"><i>Collection.</i></span>
+                </p> -->
+                <img src="images/yoii.jpg" alt="yoingab">
+
+                <div class="frameTab2">
+                    <div class="Tab">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+</body>
+</html>
