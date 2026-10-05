@@ -47,7 +47,7 @@
             top: 0;
             width: 100vw;
             height: 100vh;
-            background: radial-gradient(circle at top, rgba(255, 247, 247, 0.019), rgb(0, 0, 0));
+            background: radial-gradient(circle at top, rgba(255, 247, 247, 0.090), rgb(0, 0, 0));
             /* overflow: hidden;     */
         }
         .background-light::before {
@@ -240,69 +240,6 @@
             /* 50% { left: 110%; }  */
             100% { left: 180%; } 
         }
-        .frameTab22 {
-            position: relative;
-            top: -3.5px;
-            left: 0px;
-            height: 775px;
-            width: 1024px;
-            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-            /* background-color: rgba(72, 67, 67, 0); */
-            border: 2px solid #6868688d;
-            /* border-width: 20px; */
-            border-radius: 2.5%;
-            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
-            z-index: 3;  
-        }
-        .frameTab222 {
-            position: relative;
-            top: -4.5px;
-            left: 0px;
-            height: 775px;
-            width: 1024px;
-            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0));
-            /* border-width: 20px; */
-            border-radius: 2.5%;
-            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
-            z-index: 3;  
-        }
-        .frameTab222 {
-            position: relative;
-            top: -4.5px;
-            left: 0px;
-            height: 775px;
-            width: 1024px;
-            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.497), rgba(0, 0, 0, 0));
-            /* border-width: 20px; */
-            border-radius: 2.5%;
-            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
-            z-index: 3;  
-        }
-        .frameTab2 {
-            position: relative;
-            top: 2px;
-            clip-path: inset(0% 0% 94.5% 0%); 
-            left: -2px;
-            height: 775px;
-            width: 1024px;
-            background: radial-gradient(circle at top, rgba(255, 247, 247, 0.727), rgb(4, 4, 4));
-            /* background-color: rgb(72, 67, 67); */
-            border: 2px solid #6868688d;
-            /* border-width: 20px; */
-            border-radius: 2.5%;
-            /* box-shadow: 0 0 90px rgb(0, 0, 0); */
-            z-index: 3;
-        }
-        #frameTabPhotos {
-        position: absolute;
-        top: 60px;          /* Sama seperti frameTab1 */
-        left: 0;
-        height: 800px;      /* Samakan dengan frameTab1 */
-        width: 1040px;      /* Samakan dengan frameTab1 */
-        margin: 0 auto;
-        transform: translateX(120vw) translateY(0px);
-        }
-        
         /* ================= SMOOTH TRANSITION PATCH ================= */
         .frameTab1,
         #frameTabPhotos {
@@ -318,31 +255,12 @@
             z-index: 2;
         }
 
-        .indicator {
-            position: absolute;
-            top: 5px;
-            left: 13px;
-            width: 64px;
-            height: 35px;
-            z-index: 4;
-            /* opacity: 80%; */
-        }
-        .ples {
-            position: absolute;
-            top: -7.5px;
-            right: 20px;
-            color: #ffffff;
-            /* font-weight:normal; */
-            font-style: normal;
-            z-index: 4;
-            opacity: 45%;
-        }
         .inpo {
             font-family: 'neue';
             color: #ffffff;
             position: absolute;
-            right: 98px;
-            top: 382px;
+            right: 198px;
+            top: 452px;
             z-index: 5;
             font-size: 24px;
             opacity: 90%;
@@ -351,8 +269,8 @@
             font-family: 'neue';
             color: #ffffff;
             position: absolute;
-            right: 182px;
-            top: 414px;
+            right: 282px;
+            top: 484px;
             z-index: 5;
             font-size: 24px;
             opacity: 38%;
@@ -364,7 +282,7 @@
             top: 48px;
             right: 109px;
             color: #ffffff;
-            font-size: 96px;
+            font-size: 300px;
             text-align: left;
             /* font-family: "Gloock", serif; */
             font-family: 'neue';
@@ -385,6 +303,183 @@
             text-shadow: 1px 12px 20px rgba(3, 0, 64, 0.327), /* Bayangan kiri bawah */ 
                         -1px -4px 30px rgba(255, 255, 255, 0.366); /* Efek highlight kanan atas */ 
         }
+
+        html, body { min-height: 100%; }
+        body { min-height: 100svh; height: auto; overflow-x: clip; overflow-y: auto; }
+        .background-light { min-height: 100svh; height: auto; padding: 0 1rem 2rem; box-sizing: border-box; overflow-x: clip; }
+        .button-container { left: 50%; top: 2.25rem; transform: translateX(-50%); }
+        .frameTab1, #frameTabPhotos {
+            top: clamp(7.5rem, 18vh, 11.875rem);
+            left: 50%; width: min(65rem, calc(100vw - 2rem));
+            height: min(50rem, calc(100svh - 9rem)); min-height: 32rem; box-sizing: border-box;
+        }
+        .slogan { right: clamp(1.5rem, 9vw, 7rem); top: clamp(2rem, 7vh, 4rem); font-size: clamp(2.75rem, 7vw, 6rem); line-height: .9; }
+        .inpo, .inpo2 { right: clamp(1.5rem, 10vw, 11rem); font-size: clamp(1rem, 2.2vw, 1.5rem); }
+        .inpo { top: 55%; } .inpo2 { top: 60%; }
+        .pap-carousel {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            padding: clamp(2rem, 5vw, 4rem) clamp(3.5rem, 9vw, 7rem) clamp(4rem, 10vw, 7rem) clamp(1.5rem, 5vw, 4rem); box-sizing: border-box;
+        }
+        .pap-slides { position: relative; width: min(100%, 48rem); height: 100%; overflow: hidden; border-radius: 1rem; background: rgba(0, 0, 0, .25); }
+        .pap-slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; margin: 0; opacity: 0; transform: translateY(18%); transition: opacity .65s ease, transform .65s cubic-bezier(.22, .61, .36, 1); pointer-events: none; }
+        .pap-slide.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .pap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .pap-caption { position: relative; z-index: 1; padding: clamp(2rem, 5vh, 3.5rem) clamp(1rem, 3vw, 2rem) 1.25rem; color: #fff; font-family: 'neue', Arial, sans-serif; font-size: clamp(1rem, 2vw, 1.4rem); text-shadow: 0 1px 3px rgba(0, 0, 0, .65); background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .28) 35%, rgba(0, 0, 0, .86) 100%); }
+        .pap-indicators { position: absolute; right: clamp(1rem, 3vw, 2rem); top: 50%; display: flex; flex-direction: column; gap: .75rem; transform: translateY(-50%); z-index: 2; }
+        .pap-indicator { width: .6rem; height: .6rem; padding: 0; border: 1px solid rgba(255, 255, 255, .8); border-radius: 50%; background: transparent; cursor: pointer; transition: transform .25s ease, background-color .25s ease; }
+        .pap-indicator.is-active { background: #fff; transform: scale(1.45); }
+        @media (max-width: 600px) {
+            .nama { left: 1rem; top: .75rem; font-size: 1.15rem; } .spesialisasi { left: 1rem; top: 2.45rem; font-size: .65rem; }
+            .yt { top: 1rem; right: 5.5rem; font-size: .7rem; } .rsm { top: 1rem; right: 1rem; font-size: .7rem; }
+            .panahAsmara, .panahAsmara2 { display: none; } .button-container { top: 4.5rem; width: min(13rem, calc(100vw - 2rem)); }
+            .option-btn { padding: .65rem .4rem; font-size: .85rem; }
+            .frameTab1, #frameTabPhotos { top: 7.5rem; width: calc(100vw - 1rem); height: calc(100svh - 8.5rem); min-height: 30rem; }
+            .pap-carousel { padding: 1.25rem 2.75rem 2.5rem 1rem; } .pap-indicators { right: .85rem; }
+        }
+
+        .frameTab1 {
+            display: block;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            background: rgba(0, 0, 0, .35);
+        }
+
+        .browser-frame {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .28);
+            border-radius: inherit;
+            background: #080808;
+            box-shadow: 0 1rem 4rem rgba(0, 0, 0, .45);
+        }
+
+        .browser-bar {
+            position: relative;
+            flex: 0 0 clamp(2rem, 5vw, 3rem);
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            background: linear-gradient(180deg, #bdbdbd 0%, #888 48%, #6b6b6b 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, .55);
+            box-shadow: inset 0 1px rgba(255, 255, 255, .5);
+        }
+
+        .window-controls { display: flex; align-items: center; gap: .45rem; }
+        .window-control {
+            width: .78rem;
+            height: .78rem;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: inset 0 1px rgba(255, 255, 255, .45), 0 1px 2px rgba(0, 0, 0, .35);
+        }
+        .window-control--red { background: #ff3b30; }
+        .window-control--orange { background: #ffcc00; }
+        .window-control--green { background: #34c759; }
+        .window-control:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+        .frame-content {
+            position: relative;
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at top, rgba(255, 255, 255, .1), rgba(0, 0, 0, .72));
+        }
+
+        .home-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+            padding: 2rem clamp(2rem, 9vw, 8rem);
+            box-sizing: border-box;
+        }
+        .home-content .slogan, .home-content .inpo, .home-content .inpo2 { position: static; margin: 0; right: auto; top: auto; }
+        .home-content .slogan { max-width: 75%; }
+        .home-content .inpo { margin-top: 2.5rem; }
+        .home-content .inpo2 { margin-top: .35rem; }
+
+        .pap-carousel { position: absolute; inset: 0; padding: 1rem clamp(2.75rem, 8vw, 6rem) 1rem 1rem; }
+        .pap-slides { width: 100%; height: 100%; border-radius: .35rem; }
+        .pap-caption.is-hidden { opacity: 0; }
+        .pap-caption { transition: opacity .3s ease; }
+
+        @media (max-width: 600px) {
+            .home-content { padding: 1.5rem; }
+            .home-content .slogan { max-width: 100%; }
+            .pap-carousel { padding: .65rem 2.5rem .65rem .65rem; }
+        }
+
+        .frameTab1,
+        .browser-frame {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .home-content .inpo,
+        .home-content .inpo2 {
+            align-self: flex-end;
+            width: min(100%, 30rem);
+            text-align: right;
+            /* // turunin */
+            transform: translateY(clamp(1.25rem, 2.2vh, 1.75rem));
+        }
+
+        .pap-carousel {
+            padding: 0;
+        }
+
+        .pap-slides {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+
+        .pap-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pap-indicators {
+            right: clamp(.75rem, 2vw, 1.5rem);
+        }
+
+        @media (max-width: 600px) {
+            .pap-carousel { padding: 0; }
+        }
+
+        .home-content {
+            container-type: inline-size;
+        }
+
+        .home-content .slogan {
+            width: 100%;
+            max-width: none;
+            --slogan-font-size: clamp(.80rem, 7.4cqi, 8rem);
+            font-size: var(--slogan-font-size);
+        }
+
+        .home-content .stories {
+            font-size: var(--slogan-font-size);
+        }
+
+        .slogan-line {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        @supports (font-size: 1cqi) {
+            .home-content .slogan {
+                --slogan-font-size: clamp(.80rem, 7.4cqi, 8rem);
+            }
+        }
         
         
     </style>
@@ -393,17 +488,17 @@
     <div class="background-light">
         <div class="navbarAtas">
             <h2 class="nama" style="color: rgba(247, 247, 247, 0.959);" id="work">Brieva O.</h2>
-            <h4 class="spesialisasi" style="color: rgba(247, 247, 247, 0.842);">Computer Science - 003</h4>
+            <h4 class="spesialisasi" style="color: rgba(247, 247, 247, 0.842);">Creative Strategist</h4>
             
             <a href="https://youtube.com/@warta_tech?si=WtGRYGcXYiXVH-I-" class="yt" id="yt">YouTube</a>
-            <a href="https://www.instagram.com/bripaom/?__d=1utm_sourceig_embed" class="rsm" id="rsm">Instagram</a>
+            <a href="https://www.linkedin.com/in/brieva-ommr-622a9b337" class="rsm" id="rsm">LinkedIn</a>
             <img src="images/panahasmara.png" class="panahAsmara" id="panahAsmara" alt="panahasmara">
             <img src="images/panahasmara.png" class="panahAsmara2" id="panahAsmara2" alt="panahasmara">
             <!-- <img src="images/panahasmara.svg" class="panahasmara" alt="panahasmara"> -->
                 <div>
                     <div class="button-container">
                         <button id="option1" class="option-btn" onclick="selectOption('option1')"> Home</button> 
-                        <button id="option2" class="option-btn" onclick="selectOption('option2')">PAP</button> 
+                        <button id="option2" class="option-btn" onclick="selectOption('option2')">Journey</button> 
                         <div class="slider" id="slider"></div>
                         <div class="sliderPilihan" id="sliderPilihan"></div> 
                     </div> 
@@ -412,46 +507,62 @@
         </div>
 
         <div class="frameTab1" id="frameTab1">
-            <div class="frameTab22" id="frameTab22">
-            <div class="frameTab222" id="frameTab222">
-            <div class="frameTab2222" id="frameTab2222">
-                <img src="images/indicator.png" class="indicator" alt="indicator">
-                <h2 class="ples" id="ples">+</h2>
-                <p class="slogan" id="slogan">I craft products,<br> 
-                    interactions & <span class="stories" id="stories"><i>stories.</i></span></p>
-                    <p class="inpo" id="inpo">Designer & Writer at WarTa,</p>
-                    <p class="inpo2" id="inpo2">Based in Indonesia.</p>
-                <div class="frameTab2" id="frameTab2">
-                    <div class="Tab" id="Tab"></div>
-                    
+            <div class="browser-frame">
+                <div class="browser-bar" aria-label="Browser window bar">
+                    <div class="window-controls" aria-hidden="true">
+                        <span class="window-control window-control--red"></span>
+                        <span class="window-control window-control--orange"></span>
+                        <span class="window-control window-control--green"></span>
+                    </div>
                 </div>
-            </div>
-            </div>
+                <div class="frame-content home-content">
+                    <p class="slogan" id="slogan"><span class="slogan-line">Crafting solutions, experiences &amp;</span>
+                        <span class="slogan-line"><span class="stories" id="stories"><i>everyday ease</i></span></span></p>
+                    <p class="inpo" id="inpo">Building Catetify,</p>
+                    <p class="inpo2" id="inpo2">Based in Indonesia.</p>
+                </div>
             </div>
         </div>
         <!-- FRAME TAB KHUSUS PHOTOS -->
         <div class="frameTab1" id="frameTabPhotos" style="transform: translateX(calc(-50% + 120vw)); opacity: 0;">
-
-    <div class="frameTab22">
-        <div class="frameTab222">
-            <div class="frameTab2222">
-                <img src="images/indicator.png" class="indicator" alt="indi">
-                <h2 class="ples">+</h2>
-
-                <!-- <p class="slogan">Photos<br>
-                    <span class="stories"><i>Collection.</i></span>
-                </p> -->
-                <img src="images/yoii.jpg" alt="yoingab">
-
-                <div class="frameTab2">
-                    <div class="Tab">
+            <div class="browser-frame">
+                <div class="browser-bar" aria-label="PAP browser window controls">
+                    <div class="window-controls">
+                        <button class="window-control window-control--red" type="button" data-caption-toggle aria-label="Hide caption"></button>
+                        <button class="window-control window-control--orange" type="button" data-slide-direction="previous" aria-label="Previous image"></button>
+                        <button class="window-control window-control--green" type="button" data-slide-direction="next" aria-label="Next image"></button>
                     </div>
                 </div>
-
+                <div class="frame-content">
+                    <div class="pap-carousel" aria-label="PAP photo carousel">
+                    <div class="pap-slides">
+                        <figure class="pap-slide is-active">
+                            <img src="images/champ.jpg" alt="Portrait by the window">
+                            <figcaption class="pap-caption">Building Catetify as a nationally recognized MSME's ERP solution</figcaption>
+                        </figure>
+                        <figure class="pap-slide">
+                            <img src="images/champ2.jpg" alt="Black and white portrait">
+                            <figcaption class="pap-caption">Collaborating with lecturer to make a nationally recognized local culture promoting game</figcaption>
+                        </figure>
+                        <figure class="pap-slide">
+                            <img src="images/champ3.jpg" alt="Jamu and Biodiversity project presentation">
+                            <figcaption class="pap-caption">Expressing thoughts and action on international SDG forum held by Kwansei Gakuin University</figcaption>
+                        </figure>
+                        <figure class="pap-slide">
+                            <img src="images/champ4.jpg" alt="Collaborative work session">
+                            <figcaption class="pap-caption">Research on Kartasura Tofu Production, the problem and potentials as a natonal scale business</figcaption>
+                        </figure>
+                    </div>
+                    <div class="pap-indicators" aria-label="Choose PAP image">
+                        <button class="pap-indicator is-active" type="button" aria-label="Show first image" aria-current="true"></button>
+                        <button class="pap-indicator" type="button" aria-label="Show second image" aria-current="false"></button>
+                        <button class="pap-indicator" type="button" aria-label="Show third image" aria-current="false"></button>
+                        <button class="pap-indicator" type="button" aria-label="Show fourth image" aria-current="false"></button>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
     <br>
     <br>
