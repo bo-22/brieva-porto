@@ -37,3 +37,33 @@ function selectOption(optionId) {
         photosFrame.style.opacity = "1";
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var slides = Array.from(document.querySelectorAll('.pap-slide'));
+    var indicators = Array.from(document.querySelectorAll('.pap-indicator'));
+    var activeIndex = 0;
+    var intervalId;
+
+    function showSlide(index) {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach(function (slide, slideIndex) {
+            slide.classList.toggle('is-active', slideIndex === activeIndex);
+        });
+        indicators.forEach(function (indicator, indicatorIndex) {
+            var isActive = indicatorIndex === activeIndex;
+            indicator.classList.toggle('is-active', isActive);
+            indicator.setAttribute('aria-current', String(isActive));
+        });
+    }
+
+    function startAutoplay() {
+        window.clearInterval(intervalId);
+        intervalId = window.setInterval(function () { showSlide(activeIndex + 1); }, 5000);
+    }
+
+    indicators.forEach(function (indicator, index) {
+        indicator.addEventListener('click', function () { showSlide(index); startAutoplay(); });
+    });
+
+    if (slides.length > 1) { startAutoplay(); }
+});
